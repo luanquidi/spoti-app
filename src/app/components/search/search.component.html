@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col">
+        <input #termino type="text" (keyup)="search(termino.value)" class="form-control" placeholder="Buscar artista...">
+        <app-loading *ngIf="loading" class="m-5"></app-loading>
+        <app-spinner *ngIf="artists.length == 0"></app-spinner>
+        <div class="card-columns mt-5">
+            <app-card [item]="artist" *ngFor="let artist of artists" class="animated fadeIn"></app-card>
+        </div>
+    </div>
+</div>
